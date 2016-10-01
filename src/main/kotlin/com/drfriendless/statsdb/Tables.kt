@@ -28,12 +28,15 @@ object Games: Table("games") {
     val minPlayers = integer("minPlayers")
     val maxPlayers = integer("maxPlayers")
     val playTime = integer("playTime")
+    // TODO
 }
 
 object Users: Table("users") {
     val geek = varchar("geek", 128)
     val bggid = integer("bggid")
+    val profileViews = integer("profileViews")
     val country = varchar("country", 64)
+    val lastProfileView = date("lastProfileView")
 }
 
 object Expansions: Table("expansions") {
@@ -50,4 +53,39 @@ object Plays: Table("plays") {
     val raters = integer("raters")
     val ratingsTotal = integer("ratingsTotal")
     val location = varchar("location", 256)
+}
+
+object GeekGameTags: Table("geekgametags") {
+    val geek = varchar("geek", 128)
+    val tag = varchar("tag", 128)
+    val game = integer("game")
+}
+
+object History: Table("history") {
+    val geek = varchar("geek", 128)
+    // TODO
+}
+
+object MonthsPlayed: Table("monthsplayer") {
+    val geek = varchar("geek", 128)
+    val month = integer("month")
+    val year = integer("year")
+}
+
+object Geeks: Table("geeks") {
+    val username = varchar("username", 128)
+    val shouldplay = integer("shouldplay")
+    val avatar = varchar("avatar", 128)
+}
+
+object Files: Table("files") {
+    val filename = varchar("filename", 128)
+    val geek = varchar("geek", 128)
+    val processMethod = varchar("processMethod", 128)
+    val url = varchar("url", 256)
+    val lastUpdate = date("lastUpdate")
+    val nextUpdate = date("nextUpdate")
+    val tillNextUpdate = varchar("tillNextUpdate", 128)
+    val description = varchar("description", 256)
+    val lastattempt = date("lastattempt")
 }
