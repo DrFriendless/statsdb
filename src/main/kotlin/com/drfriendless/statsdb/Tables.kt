@@ -89,3 +89,14 @@ object Files: Table("files") {
     val description = varchar("description", 256)
     val lastattempt = date("lastattempt")
 }
+
+object Downloader: Table("downloader") {
+    val starttime = date("starttime")
+    val endtime = date("endtime")
+    val filesprocessed = integer("filesprocessed")
+    val waittime = float("waittime", 3, 1)
+    val pausetime = float("pausetime", 3, 1)
+    val failures = integer("failures")
+    val users = integer("users")
+    val games = integer("games")
+}
