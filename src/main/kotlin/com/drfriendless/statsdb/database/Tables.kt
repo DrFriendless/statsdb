@@ -1,6 +1,5 @@
 package com.drfriendless.statsdb.database
 
-import com.drfriendless.statsdb.float
 import org.jetbrains.exposed.sql.Table
 
 /**
@@ -35,8 +34,8 @@ object Users: Table("users") {
     val geek = varchar("geek", 128)
     val bggid = integer("bggid")
     val profileViews = integer("profileViews")
-    val country = varchar("country", 64)
-    val lastProfileView = date("lastProfileView")
+    val country = varchar("country", 64).nullable()
+    val lastProfileView = date("lastProfileView").nullable()
 }
 
 object Expansions: Table("expansions") {
@@ -96,6 +95,7 @@ object Downloader: Table("downloader") {
     val filesprocessed = integer("filesprocessed")
     val waittime = float("waittime", 3, 1)
     val pausetime = float("pausetime", 3, 1)
+    val nothing = float("nothing", 3, 1)
     val failures = integer("failures")
     val users = integer("users")
     val games = integer("games")

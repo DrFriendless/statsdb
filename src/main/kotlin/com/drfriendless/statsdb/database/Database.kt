@@ -1,6 +1,6 @@
-package com.drfriendless.statsdb
+package com.drfriendless.statsdb.database
 
-import com.drfriendless.statsdb.database.GeekGames
+import com.drfriendless.statsdb.DBConfig
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.Database
 
@@ -21,7 +21,7 @@ open class Database(config: DBConfig) {
         }
     }
 
-    private lateinit var db: org.jetbrains.exposed.sql.Database
+    private lateinit var db: Database
     init {
         val url = config.dbURL
         if (!initialised(url)) {
@@ -30,8 +30,8 @@ open class Database(config: DBConfig) {
     }
 }
 
-fun float(name: String, scale: Int, precision: Int): Column<Float> =
-        GeekGames.registerColumn(name, FloatColumnType(scale, precision))
+fun Table.float(name: String, scale: Int, precision: Int): Column<Float> =
+        registerColumn(name, FloatColumnType(scale, precision))
 
 class FloatColumnType(val scale: Int, val precision: Int): ColumnType() {
     override fun sqlType(): String = "FLOAT($scale, $precision)"
