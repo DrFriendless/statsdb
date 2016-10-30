@@ -62,7 +62,15 @@ object GeekGameTags: Table("geekgametags") {
 
 object History: Table("history") {
     val geek = varchar("geek", 128)
-    // TODO
+    val ts = date("ts")
+    val friendless = integer("friendless")
+    val wanted = integer("wanted")
+    val wished = integer("wished")
+    val owned = integer("owned")
+    val unplayed = integer("unplayed")
+    val distinctPlayed = integer("distinctPlayed")
+    val traded = integer("traded")
+    /* TODO */
 }
 
 object MonthsPlayed: Table("monthsplayer") {
@@ -99,4 +107,9 @@ object Downloader: Table("downloader") {
     val failures = integer("failures")
     val users = integer("users")
     val games = integer("games")
+}
+
+object Metadata: Table("metadata") {
+    val ruletype = integer("ruletype")
+    val bggid = integer("bggid")
 }
