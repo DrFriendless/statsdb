@@ -113,3 +113,8 @@ object Metadata: Table("metadata") {
     val ruletype = integer("ruletype")
     val bggid = integer("bggid")
 }
+
+object Series: Table("series") {
+    val name = varchar("name", 128)
+    val game = integer("game")
+}
