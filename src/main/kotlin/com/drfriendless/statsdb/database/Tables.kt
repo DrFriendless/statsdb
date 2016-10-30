@@ -86,15 +86,15 @@ object Geeks: Table("geeks") {
 }
 
 object Files: Table("files") {
-    val filename = varchar("filename", 128)
-    val geek = varchar("geek", 128)
+    val filename = varchar("filename", 128).nullable()
+    val geek = varchar("geek", 128).nullable()
     val processMethod = varchar("processMethod", 128)
-    val url = varchar("url", 256)
-    val lastUpdate = date("lastUpdate")
-    val nextUpdate = date("nextUpdate")
+    val url = varchar("url", 256).nullable()
+    val lastUpdate = date("lastUpdate").nullable()
+    val nextUpdate = date("nextUpdate").nullable()
     val tillNextUpdate = varchar("tillNextUpdate", 128)
     val description = varchar("description", 256)
-    val lastattempt = date("lastattempt")
+    val lastattempt = date("lastattempt").nullable()
 }
 
 object Downloader: Table("downloader") {
