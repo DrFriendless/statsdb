@@ -119,7 +119,7 @@ object Series: Table("series") {
     val game = integer("game")
 }
 
-object FrontPageGeek : Table("frontpagegeek") {
+object FrontPageGeeks : Table("frontpagegeek") {
     val geek = Files.varchar("geek", 128)
     val totalPlays = integer("totalPlays")
     val distinctGames = integer("distinctGames")
