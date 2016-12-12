@@ -118,3 +118,25 @@ object Series: Table("series") {
     val name = varchar("name", 128)
     val game = integer("game")
 }
+
+object FrontPageGeek : Table("frontpagegeek") {
+    val geek = Files.varchar("geek", 128)
+    val totalPlays = integer("totalPlays")
+    val distinctGames = integer("distinctGames")
+    val top50 = integer("top50")
+    val sdj = integer("sdj")
+    val the100 = integer("the100")
+    val owned = integer("owned")
+    val want = integer("want")
+    val wish = integer("wish")
+    val trade = integer("trade")
+    val prevOwned = integer("prevOwned")
+    val friendless = integer("friendless")
+    val cfm = float("cfm", 4, 2)
+    val utilisation = float("utilisation", 4, 2)
+    val tens = integer("tens")
+    val zeros = integer("zeros")
+    val ext100 = integer("ext100")
+    val mv = integer("mv")
+    val hindex = integer("hindex")
+}
