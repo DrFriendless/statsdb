@@ -2,17 +2,20 @@ apply plugin: 'idea'
 apply plugin: 'kotlin'
 apply plugin: 'java'
 apply plugin: "maven"
+apply plugin: 'org.kordamp.gradle.stats'
 
 group = "com.drfriendless"
 version = "0.1"
 
 buildscript {
-    ext.kotlin_version = '1.0.4'
+    ext.kotlin_version = '1.0.5'
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'org.kordamp.gradle:stats-gradle-plugin:0.2.0'
     }
 }
 
@@ -25,7 +28,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jetbrains.exposed:exposed:0.6.5'
+    compile 'org.jetbrains.exposed:exposed:0.7.4'
     compile 'mysql:mysql-connector-java:5.1.6'
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testCompile 'junit:junit:4.12'
