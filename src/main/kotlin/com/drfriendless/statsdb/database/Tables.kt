@@ -106,6 +106,9 @@ object Downloader: Table("downloader") {
     val nothing = float("nothing", 3, 1)
     val failures = integer("failures")
     val users = integer("users")
+    val files1 = integer("files1")
+    val files2 = integer("files2")
+    val files3 = integer("files3")
     val games = integer("games")
 }
 
@@ -120,7 +123,7 @@ object Series: Table("series") {
 }
 
 object FrontPageGeeks : Table("frontpagegeek") {
-    val geek = Files.varchar("geek", 128)
+    val geek = varchar("geek", 128)
     val totalPlays = integer("totalPlays")
     val distinctGames = integer("distinctGames")
     val top50 = integer("top50")
