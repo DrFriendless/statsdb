@@ -12,6 +12,7 @@ class DBConfig(filename: String) {
     val dbUser: String by prop
     val dbPasswd: String by prop
     val dbURL: String by prop
+    val dbInformationURL: String by prop
 
     init {
         FileReader(filename).use {
