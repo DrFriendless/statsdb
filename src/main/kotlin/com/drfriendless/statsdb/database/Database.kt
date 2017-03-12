@@ -21,7 +21,7 @@ open class Database(config: DBConfig) {
         }
     }
 
-    private lateinit var db: Database
+    protected lateinit var db: Database
     init {
         val url = config.dbURL
         if (!initialised(url)) {

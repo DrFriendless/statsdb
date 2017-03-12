@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile 'org.jetbrains.exposed:exposed:0.7.4'
+    compile 'org.jetbrains.exposed:exposed:0.7.5'
     compile 'mysql:mysql-connector-java:5.1.6'
     testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
     testCompile 'junit:junit:4.12'
